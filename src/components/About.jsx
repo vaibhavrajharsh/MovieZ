@@ -1,7 +1,7 @@
 import React from "react";
 import SideNav from "./Template/SideNav";
 
-const AboutUs = () => {
+const About = () => {
   return (
     <>
       <SideNav />
@@ -58,4 +58,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

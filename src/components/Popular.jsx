@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SideNav from "./Template/SideNav";
-import axios from "../../src/Utils/axios";
+import axios from "../Utils/axios";
 import Dropdown from "./Template/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "./Template/Loader";

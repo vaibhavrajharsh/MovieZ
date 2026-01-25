@@ -1,4 +1,4 @@
-import axios from "../../src/Utils/axios";
+import axios from "../Utils/axios";
 import React, { useEffect, useState } from "react";
 import SideNav from "./Template/SideNav";
 import Trending from "./Template/Trending";
@@ -83,16 +83,10 @@ const Explore = () => {
                   <h1
                     className="truncate text-m font-semibold text-white tracking-wide"
                     title={
-                      e.name ||
-                      e.title ||
-                      e.original_name ||
-                      e.original_title
+                      e.name || e.title || e.original_name || e.original_title
                     }
                   >
-                    {e.name ||
-                      e.title ||
-                      e.original_name ||
-                      e.original_title}
+                    {e.name || e.title || e.original_name || e.original_title}
                   </h1>
 
                   <div className="mt-1 flex items-center gap-2 text-xs text-zinc-400">
