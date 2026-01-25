@@ -27,9 +27,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="h-screen flex overflow-hidden w-full">
+      <div className="h-screen flex overflow-hidden justify-center md:justify-start w-full">
         <SideNav />
-        <div className="w-[85%] flex flex-col">
+        <div className="w-[85vw] flex flex-col">
           <div className="shrink-0">
             <TopNav />
           </div>

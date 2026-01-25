@@ -19,7 +19,7 @@ const SearchBar = () => {
     getSearches();
   }, [query]);
   return (
-    <div className="searchbar z-50 w-[50%] h-min relative bg-zinc-700 rounded-xl flex items-center">
+    <div className="searchbar z-50 w-full lg:w-[50%] h-min relative bg-zinc-700 rounded-xl flex items-center">
       <i className="text-3xl text-zinc-400 ri-search-2-line pl-5"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}

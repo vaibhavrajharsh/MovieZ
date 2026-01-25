@@ -31,11 +31,19 @@ const Trending = () => {
   return (
     <>
       <div>
-        <h1 className="text-4xl text-white font-bold px-5 pt-6">
+        <h1
+          className=" text-l
+    sm:text-xl
+    md:text-3xl
+    xl:text-4xl text-white font-bold px-5 pt-6"
+        >
           Trending Now
         </h1>
         <div className="flex justify-between items-center mr-5">
-          <p className="text-xl text-zinc-500 font-semibold px-5 pt-2">
+          <p className=" text-sm
+    sm:text-base
+    md:text-lg
+    xl:text-xl text-zinc-500 font-semibold px-5 pt-2">
             Top picks people are watching this week
           </p>
           <Dropdown

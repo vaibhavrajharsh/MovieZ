@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 
 const SideNav = () => {
   const navLinkClass = ({ isActive }) =>
-    `rounded-lg px-5 py-3 transition
+    `flex items-center justify-center lg:justify-start
+     rounded-lg px-4 py-3 transition
      ${
        isActive
          ? "bg-amber-600 text-white"
@@ -12,80 +13,80 @@ const SideNav = () => {
   return (
     <div
       className="
-        hidden lg:flex
-        lg:w-64
+        hidden sm:flex
+        w-min lg:w-[15vw]
         shrink-0
         h-screen overflow-y-auto
         border-r border-zinc-600
-        p-6 xl:p-10
+        p-3 lg:p-5 xl:p-8
         text-white
       "
     >
-      <div className="w-full">
-        <h1 className="text-xl font-bold">
-          <i className="ri-movie-2-fill text-amber-600 mr-2"></i>
-          <Link to="/" className="text-2xl">
+      <div className="w-full flex flex-col items-center lg:items-start">
+        
+        {/* Logo */}
+        <h1 className="text-xl font-bold flex items-center pt-3">
+          <i className="ri-movie-2-fill text-amber-600 text-3xl"></i>
+          <Link to="/" className="hidden lg:inline text-2xl ml-2">
             MovieZ
           </Link>
         </h1>
 
-        <nav
-          className="
-            flex flex-col
-            gap-4
-            pt-10
-            mb-2
-            text-zinc-400
-            text-sm
-            sm:text-base
-            md:text-m
-            xl:text-lg
-          "
-        >
+        {/* Main Nav */}
+        <nav className="flex flex-col gap-4 pt-10 w-full">
           <NavLink to="/" className={navLinkClass}>
-            <i className="mr-2 ri-home-4-fill"></i>Home
+            <i className="ri-home-4-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">Home</span>
           </NavLink>
+
           <NavLink to="/explore" className={navLinkClass}>
-            <i className="mr-2 ri-search-2-line"></i>Search
+            <i className="ri-search-2-line text-xl"></i>
+            <span className="hidden lg:inline ml-3">Search</span>
           </NavLink>
+
           <NavLink to="/trendings" className={navLinkClass}>
-            <i className="ri-fire-fill mr-2"></i>Trending
+            <i className="ri-fire-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">Trending</span>
           </NavLink>
+
           <NavLink to="/popular" className={navLinkClass}>
-            <i className="ri-bard-fill mr-2"></i>Popular
+            <i className="ri-bard-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">Popular</span>
           </NavLink>
+
           <NavLink to="/Movies" className={navLinkClass}>
-            <i className="ri-film-fill mr-2"></i>Movies
+            <i className="ri-film-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">Movies</span>
           </NavLink>
+
           <NavLink to="/tvshows" className={navLinkClass}>
-            <i className="ri-tv-fill mr-2"></i>Tv Shows
+            <i className="ri-tv-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">TV Shows</span>
           </NavLink>
+
           <NavLink to="/people" className={navLinkClass}>
-            <i className="ri-team-fill mr-2"></i>People
+            <i className="ri-team-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">People</span>
           </NavLink>
         </nav>
 
-        <hr className="h-px border-none bg-zinc-600" />
+        {/* Divider */}
+        <hr className="w-full my-6 bg-zinc-600 border-none h-px" />
 
-        <nav className="
-            flex flex-col
-            pt-4
-            gap-2
-            mb-2
-            text-zinc-400
-            text-sm
-            sm:text-base
-            md:text-m
-            xl:text-lg
-          ">
-          <h1 className="mt-8 mb-5 font-semibold text-white">
+        {/* Info Nav */}
+        <nav className="flex flex-col gap-3 w-full">
+          <h1 className="hidden lg:block font-semibold text-white mb-2">
             Website Info
           </h1>
+
           <NavLink to="/aboutus" className={navLinkClass}>
-            <i className="ri-information-fill mr-2"></i>About 
+            <i className="ri-information-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">About</span>
           </NavLink>
+
           <NavLink to="/contact" className={navLinkClass}>
-            <i className="ri-mail-fill mr-2"></i>Contact
+            <i className="ri-mail-fill text-xl"></i>
+            <span className="hidden lg:inline ml-3">Contact</span>
           </NavLink>
         </nav>
       </div>
