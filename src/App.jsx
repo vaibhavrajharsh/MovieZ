@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Components/Home.jsx";
-import Popular from "./Components/Popular.jsx";
-import Movies from "./Components/Movies.jsx";
-import TvShows from "./Components/TvShows.jsx";
-import People from "./Components/People.jsx";
-import Trendings from "./Components/Trendings.jsx";
-import Contact from "./Components/Contact.jsx";
-import Explore from "./Components/Explore.jsx";
-import About from "./Components/About.jsx";
+import Home from "./components/Home.jsx";
+import Popular from "./components/Popular.jsx";
+import Movies from "./components/Movies.jsx";
+import TvShows from "./components/TvShows.jsx";
+import People from "./components/People.jsx";
+import Trendings from "./components/Trendings.jsx";
+import Contact from "./components/Contact.jsx";
+import Explore from "./components/Explore.jsx";
+import About from "./components/About.jsx";
 
 const App = () => {
   return (
