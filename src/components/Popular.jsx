@@ -4,6 +4,7 @@ import axios from "../Utils/axios";
 import Dropdown from "./Template/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "./Template/Loader";
+import BottomNav from "./Template/BottomNav";
 
 const Popular = () => {
   document.title = "MovieZ | Popular";
@@ -50,6 +51,7 @@ const Popular = () => {
   return (
     <>
       <SideNav />
+      <BottomNav/>
       {popular ? (
         <>
           <div

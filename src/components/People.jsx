@@ -4,6 +4,7 @@ import axios from "../Utils/axios";
 import Loader from "./Template/Loader";
 import Dropdown from "./Template/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
+import BottomNav from "./Template/BottomNav";
 
 const People = () => {
   document.title = "MovieZ | People";
@@ -51,6 +52,7 @@ const People = () => {
   return (
     <>
       <SideNav />
+      <BottomNav />
       {people ? (
         <>
           <div

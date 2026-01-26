@@ -91,7 +91,7 @@ const Trending = () => {
                 </span>
               </div>
 
-              <div className="mt-3 flex gap-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <div className="mt-3 flex gap-2 lg:opacity-0 lg:translate-y-2 lg:transition-all lg:duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                 <button
                   onClick={() =>
                     window.open(

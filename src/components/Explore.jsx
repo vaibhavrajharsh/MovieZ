@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SideNav from "./Template/SideNav";
 import Trending from "./Template/Trending";
 import Popular from "./Template/Popular";
+import BottomNav from "./Template/BottomNav";
 
 const Explore = () => {
   document.title = "Moviez | Explore";
@@ -37,6 +38,7 @@ const Explore = () => {
     <>
       <div className="h-screen flex overflow-hidden justify-start w-full">
         <SideNav />
+        <BottomNav />
 
         <div className="flex-1 flex flex-col overflow-x-auto">
           {/* SEARCH BAR */}
@@ -63,7 +65,7 @@ const Explore = () => {
 
           {/* CONTENT */}
           {query ? (
-            <div className="mt-8 px-5 flex flex-wrap gap-5">
+            <div className="mt-8 px-5 flex flex-wrap justify-center gap-5">
               {searches.map((e, i) => (
                 <div
                   key={i}

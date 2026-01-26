@@ -4,6 +4,7 @@ import axios from "../Utils/axios";
 import Loader from "./Template/Loader";
 import Dropdown from "./Template/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
+import BottomNav from "./Template/BottomNav";
 
 const Trendings = () => {
   document.title = "Moviez | Trendings";
@@ -58,6 +59,7 @@ const Trendings = () => {
   return (
     <>
       <SideNav />
+      <BottomNav />
       {movies ? (
         <>
           <div

@@ -13,7 +13,7 @@ const SideNav = () => {
   return (
     <div
       className="
-        hidden sm:flex
+        hidden lg:flex
         w-min lg:w-[15vw]
         shrink-0
         h-screen overflow-y-auto

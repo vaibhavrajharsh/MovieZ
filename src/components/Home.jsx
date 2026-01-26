@@ -5,6 +5,7 @@ import axios from "../Utils/axios";
 import Trending from "./Template/Trending";
 import { useEffect, useState } from "react";
 import Loader from "./Template/Loader";
+import BottomNav from "./Template/BottomNav";
 
 const Home = () => {
   document.title = "MovieZ | Home";
@@ -27,8 +28,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="h-screen flex overflow-hidden justify-center md:justify-start w-full">
+      <div className="h-screen flex overflow-hidden justify-center w-full">
         <SideNav />
+        <BottomNav />
         <div className="w-[85vw] flex flex-col">
           <div className="shrink-0">
             <TopNav />

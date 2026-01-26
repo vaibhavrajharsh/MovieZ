@@ -51,6 +51,7 @@ const TvShows = () => {
   return (
     <>
       <SideNav />
+      <BottomNav/>
       {tvseries ? (
         <>
           <div
