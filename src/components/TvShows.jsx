@@ -4,6 +4,7 @@ import axios from "../Utils/axios";
 import Loader from "./Template/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Dropdown from "./Template/Dropdown";
+import BottomNav from "./Template/BottomNav";
 
 const TvShows = () => {
   const [tvseries, setTvseries] = useState([]);
@@ -51,7 +52,7 @@ const TvShows = () => {
   return (
     <>
       <SideNav />
-      <BottomNav/>
+      <BottomNav />
       {tvseries ? (
         <>
           <div

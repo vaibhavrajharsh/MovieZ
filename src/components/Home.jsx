@@ -28,10 +28,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="h-screen flex overflow-hidden justify-center w-full">
+      <div className=" pb-18 lg:pb-0 flex overflow-hidden justify-center w-full">
         <SideNav />
         <BottomNav />
-        <div className="w-[85vw] flex flex-col">
+        <div className="w-full lg:w-[85vw] p-2 lg:p-0 flex flex-col">
           <div className="shrink-0">
             <TopNav />
           </div>

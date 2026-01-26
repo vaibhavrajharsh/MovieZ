@@ -57,7 +57,7 @@ const Movies = () => {
         <>
           <div
             id="scrollableDiv"
-            className="flex flex-col w-full h-full overflow-x-auto"
+            className="flex flex-col w-full h-full overflow-x-auto pb-18 "
           >
             <div className="p-2 mb-3 w-full ">
               <h1 className="text-4xl text-white font-bold px-5 pt-6">

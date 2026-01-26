@@ -51,7 +51,7 @@ const Popular = () => {
   return (
     <>
       <SideNav />
-      <BottomNav/>
+      <BottomNav />
       {popular ? (
         <>
           <div

@@ -6,6 +6,7 @@ import Dropdown from "./Template/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import BottomNav from "./Template/BottomNav";
 
+
 const Trendings = () => {
   document.title = "Moviez | Trendings";
   const [movies, setMovies] = useState([]);
@@ -59,7 +60,7 @@ const Trendings = () => {
   return (
     <>
       <SideNav />
-      <BottomNav />
+      <BottomNav/>
       {movies ? (
         <>
           <div
