@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "../../Utils/axios";
 import React, { useEffect, useState } from "react";
 
@@ -36,7 +36,8 @@ const SearchBar = () => {
       )}
       <div className=" absolute bg-zinc-800 w-[80%] max-h-[50vh] top-full right-15 overflow-y-scroll">
         {searches.map((s, i) => (
-          <NavLink
+          <Link
+            to={`/${s.media_type}/details/${s.id}`}
             key={i}
             className="w-full flex items-center p-2 hover:bg-zinc-700 gap-5 text-zinc-500 border-b"
           >
@@ -52,7 +53,7 @@ const SearchBar = () => {
               <p className="text-sm">{s.release_date}</p>
               <p className="capitalize">{s.media_type}</p>
             </div>
-          </NavLink>
+          </Link>
         ))}
       </div>
     </div>

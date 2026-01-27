@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ data }) => {
   return (
     <div className="w-full h-[28vh] sm:h-[35vh] md:h-[45vh] lg:h-[450px]">
+      <Link to={`/${data.media_type || data.title}/details/${data.id}`}>
       <div
         className="
           relative
@@ -72,6 +74,7 @@ const Header = ({ data }) => {
           </button>
         </div>
       </div>
+      </Link>
     </div>
   );
 };

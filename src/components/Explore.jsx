@@ -4,6 +4,8 @@ import SideNav from "./Template/SideNav";
 import Trending from "./Template/Trending";
 import Popular from "./Template/Popular";
 import BottomNav from "./Template/BottomNav";
+import { Link } from "react-router-dom";
+import Card from "./Template/Card";
 
 const Explore = () => {
   document.title = "Moviez | Explore";
@@ -66,40 +68,7 @@ const Explore = () => {
         {query ? (
           <div className="mt-8 px-5 flex flex-wrap justify-center gap-5">
             {searches.map((e, i) => (
-              <div
-                key={i}
-                className="group relative w-[300px] h-min shrink-0 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                <div className="relative h-[380px] overflow-hidden">
-                  <img
-                    src={`https://image.tmdb.org/t/p/original/${
-                      e.poster_path || e.backdrop_path || e.profile_path
-                    }`}
-                    alt={e.title || e.name}
-                    className="h-full w-full object-cover transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
-                </div>
-
-                <div className="relative p-4">
-                  <h1
-                    className="truncate text-m font-semibold text-white tracking-wide"
-                    title={
-                      e.name || e.title || e.original_name || e.original_title
-                    }
-                  >
-                    {e.name || e.title || e.original_name || e.original_title}
-                  </h1>
-
-                  <div className="mt-1 flex items-center gap-2 text-xs text-zinc-400">
-                    <span className="text-yellow-400">
-                      ⭐ {e.vote_average?.toFixed(1)}
-                    </span>
-                    <span>•</span>
-                    <span>{e.media_type || "Movie"}</span>
-                  </div>
-                </div>
-              </div>
+              <Card key={i} data={e} />
             ))}
 
             {!loading && searches.length === 0 && (

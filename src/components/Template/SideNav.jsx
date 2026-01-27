@@ -54,17 +54,17 @@ const SideNav = () => {
             <span className="hidden lg:inline ml-3">Popular</span>
           </NavLink>
 
-          <NavLink to="/Movies" className={navLinkClass}>
+          <NavLink to="/movie" className={navLinkClass}>
             <i className="ri-film-fill text-xl"></i>
             <span className="hidden lg:inline ml-3">Movies</span>
           </NavLink>
 
-          <NavLink to="/tvshows" className={navLinkClass}>
+          <NavLink to="/tv" className={navLinkClass}>
             <i className="ri-tv-fill text-xl"></i>
             <span className="hidden lg:inline ml-3">TV Shows</span>
           </NavLink>
 
-          <NavLink to="/people" className={navLinkClass}>
+          <NavLink to="/person" className={navLinkClass}>
             <i className="ri-team-fill text-xl"></i>
             <span className="hidden lg:inline ml-3">People</span>
           </NavLink>

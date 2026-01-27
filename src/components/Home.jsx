@@ -1,11 +1,12 @@
 import SideNav from "./Template/SideNav";
-import TopNav from "./Template/TopNav";
+
 import Header from "./Template/Header";
 import axios from "../Utils/axios";
 import Trending from "./Template/Trending";
 import { useEffect, useState } from "react";
 import Loader from "./Template/Loader";
 import BottomNav from "./Template/BottomNav";
+import SearchBar from "./Template/SearchBar";
 
 const Home = () => {
   document.title = "MovieZ | Home";
@@ -32,8 +33,8 @@ const Home = () => {
         <SideNav />
         <BottomNav />
         <div className="w-full lg:w-[85vw] p-2 lg:p-0 flex flex-col">
-          <div className="shrink-0">
-            <TopNav />
+          <div className="shrink-0 p-5">
+            <SearchBar/>
           </div>
 
           {poster ? (
