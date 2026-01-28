@@ -7,13 +7,16 @@ import Loader from "./Template/Loader";
 import BottomNav from "./Template/BottomNav";
 
 const MovieCard = ({ item }) => (
-  <Link to={`/movie/details/${item.id}`} className="w-[140px] md:w-[180px] shrink-0">
+  <Link
+    to={`/movie/details/${item.id}`}
+    className="w-[140px] md:w-[180px] shrink-0"
+  >
     <img
       src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
       alt={item.title || item.name}
       className="rounded-lg hover:scale-105 transition cursor-pointer"
     />
-    <p className="text-sm mt-2 text-center">{item.title || item.name}</p>
+    <p className="text-sm mt-2 text-center truncate">{item.title || item.name}</p>
   </Link>
 );
 
@@ -48,120 +51,149 @@ const MovieDetails = () => {
     <>
       <SideNav />
       <BottomNav />
-      {info?(<>
-        {/* HERO SECTION */}
-        <div
-          className=" min-h-screen w-full bg-cover bg-center relative overflow-x-auto"
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original/${details.backdrop_path})`,
-          }}
-        >
-          <div className=" fixed w-full  inset-0 bg-black/85" />
+      {info ? (
+        <>
+          {/* HERO SECTION */}
+          <div
+            className=" min-h-screen w-full bg-cover bg-center relative overflow-x-auto"
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/original/${details.backdrop_path})`,
+            }}
+          >
+            <div className=" fixed w-full  inset-0 bg-black/85" />
 
-          <div className="relative z-10 p-6 md:p-12 lg:p-20 text-white">
-            <div className="flex flex-col md:flex-row gap-8">
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
-                className="w-[70vw] md:w-[260px] rounded-lg shadow-lg"
-                alt={details.title}
-              />
+            <div className="relative z-10 p-6 md:p-12 lg:p-20 text-white">
+              <div className="flex flex-col items-center md:flex-row gap-8">
+                <div className="w-[70vw] md:w-[300px] lg:w-[400px] flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
+                    className="cover"
+                    alt={details.title}
+                  />
+                </div>
 
-              <div>
-                <h1 className="text-4xl font-bold mb-2">
-                  {details.title || details.name}
-                </h1>
+                <div>
+                  <h1 className="text-4xl font-bold mb-2">
+                    {details.title || details.name}
+                  </h1>
 
-                <p className="text-gray-300 mb-4">
-                  {details.release_date || details.first_air_date} •{" "}
-                  {details.genres?.map((g) => g.name).join(", ")}
-                </p>
+                  <p className="text-gray-300 mb-4">
+                    {details.release_date || details.first_air_date} •{" "}
+                    {details.genres?.map((g) => g.name).join(", ")}
+                  </p>
 
-                <p className="max-w-3xl text-gray-200">{details.overview}</p>
+                  <p className="max-w-3xl text-gray-200">{details.overview}</p>
+                  <p className="mt-4 mb-4 ">
+                    <span className="font-semibold">⭐</span>{" "}
+                    {details.vote_average?.toFixed(1)} / 10 (
+                    {details.vote_count} votes)
+                  </p>
 
-                {/* EXTERNAL IDS */}
-                <div className="flex gap-4 mt-6 text-xl">
-                  {externalId?.imdb_id && (
-                    <a
-                      href={`https://www.imdb.com/title/${externalId.imdb_id}`}
-                      target="_blank"
-                    >
-                      IMDB
-                    </a>
-                  )}
-                  {externalId?.instagram_id && (
-                    <a
-                      href={`https://instagram.com/${externalId.instagram_id}`}
-                      target="_blank"
-                    >
-                      INSTA
-                    </a>
-                  )}
-                  {externalId?.twitter_id && (
-                    <a
-                      href={`https://twitter.com/${externalId.twitter_id}`}
-                      target="_blank"
-                    >
-                      Twitter
-                    </a>
-                  )}
+                  <a className=" underline" href={details.homepage} target="_blank">official website</a>
+
+                  
+                  {/* WATCH PROVIDERS */}
+                  <div className="mt-5 mb-5  space-y-1 ">
+                    {/* Stream */}
+                    {watchproviders?.flatrate && (
+                      <div>
+                        <h2 className="mb-2 text-lg font-semibold">Stream</h2>
+                        <div className="flex gap-3">
+                          {watchproviders.flatrate.map((p) => (
+                            <div key={p.provider_id} className="text-center">
+                              <img
+                                src={`https://image.tmdb.org/t/p/w200${p.logo_path}`}
+                                alt={p.provider_name}
+                                className="h-10 w-10 rounded-lg"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Rent */}
+                    {watchproviders?.rent && (
+                      <div>
+                        <h2 className="mb-2 text-lg font-semibold">Rent</h2>
+                        <div className="flex gap-3">
+                          {watchproviders.rent.map((p) => (
+                            <div key={p.provider_id} className="text-center">
+                              <img
+                                src={`https://image.tmdb.org/t/p/w200${p.logo_path}`}
+                                alt={p.provider_name}
+                                className="h-10 w-10 rounded-lg"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Buy */}
+                    {watchproviders?.buy && (
+                      <div>
+                        <h2 className="mb-2 text-lg font-semibold">Buy</h2>
+                        <div className="flex gap-3">
+                          {watchproviders.buy.map((p) => (
+                            <div key={p.provider_id} className="text-center">
+                              <img
+                                src={`https://image.tmdb.org/t/p/w200${p.logo_path}`}
+                                alt={p.provider_name}
+                                className="h-10 w-10 rounded-lg"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
+
+              {/* TRAILER */}
+              {trailer && (
+                <div className="mt-12">
+                  <h2 className="text-2xl font-semibold mb-4">Trailer</h2>
+                  <iframe
+                    className="w-full md:w-[80%] aspect-video rounded-lg"
+                    src={`https://www.youtube.com/embed/${trailer.key}`}
+                    allowFullScreen
+                  />
+                </div>
+              )}
+
+              {/* RECOMMENDATIONS */}
+              {recommendations?.length > 0 && (
+                <Link className="mt-10 w-full">
+                  <h2 className="text-2xl font-semibold mb-4">Recommended</h2>
+                  <div className="flex gap-4 overflow-x-auto">
+                    {recommendations.map((item) => (
+                      <MovieCard key={item.id} item={item} />
+                    ))}
+                  </div>
+                </Link>
+              )}
+
+              {/* SIMILAR */}
+              {similar?.length > 0 && (
+                <div className="mt-12 w-full">
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Similar Movies
+                  </h2>
+                  <div className="flex gap-4 overflow-x-auto">
+                    {similar.map((item) => (
+                      <MovieCard key={item.id} item={item} />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-
-            {/* TRAILER */}
-            {trailer && (
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold mb-4">Trailer</h2>
-                <iframe
-                  className="w-full md:w-[80%] aspect-video rounded-lg"
-                  src={`https://www.youtube.com/embed/${trailer.key}`}
-                  allowFullScreen
-                />
-              </div>
-            )}
-
-            {/* WATCH PROVIDERS */}
-            {watchproviders?.IN && (
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold mb-4">Available On</h2>
-                <div className="flex gap-4 flex-wrap">
-                  {watchproviders.IN.flatrate?.map((p) => (
-                    <img
-                      key={p.provider_id}
-                      src={`https://image.tmdb.org/t/p/w200/${p.logo_path}`}
-                      className="w-12 h-12 rounded"
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* RECOMMENDATIONS */}
-            {recommendations?.length > 0 && (
-              <Link className="mt-12 w-full">
-                <h2 className="text-2xl font-semibold mb-4">Recommended</h2>
-                <div className="flex gap-4 overflow-x-auto">
-                  {recommendations.map((item) => (
-                    <MovieCard key={item.id} item={item} />
-                  ))}
-                </div>
-              </Link>
-            )}
-
-            {/* SIMILAR */}
-            {similar?.length > 0 && (
-              <div className="mt-12 w-full">
-                <h2 className="text-2xl font-semibold mb-4">Similar Movies</h2>
-                <div className="flex gap-4 overflow-x-auto">
-                  {similar.map((item) => (
-                    <MovieCard key={item.id} item={item} />
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
-        </div>
-      </>):(<Loader/>)}
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
