@@ -13,13 +13,17 @@ const SideNav = () => {
   return (
     <div
       className="
+       
         hidden lg:flex
+        
         w-min lg:w-[15vw]
         shrink-0
         h-screen overflow-y-auto
         border-r border-zinc-600
+      
         p-3 lg:p-5 xl:p-8
         text-white
+        z-10
       "
     >
       <div className="w-full flex flex-col items-center lg:items-start">
@@ -71,7 +75,7 @@ const SideNav = () => {
         </nav>
 
         {/* Divider */}
-        <hr className="w-full my-6 bg-zinc-600 border-none h-px" />
+        <hr className="w-full my-6 bg-zinc-700 border-none h-px" />
 
         {/* Info Nav */}
         <nav className="flex flex-col gap-3 w-full">
