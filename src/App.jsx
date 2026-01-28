@@ -9,9 +9,9 @@ import Trendings from "./components/Trendings.jsx";
 import Contact from "./components/Contact.jsx";
 import Explore from "./components/Explore.jsx";
 import About from "./components/About.jsx";
-import MovieDetails from "./Components/MovieDetails.jsx";
-import PersonDetails from "./Components/PersonDetails.jsx";
-import TvDetails from "./Components/TvDetails.jsx";
+import MovieDetails from "./components/MovieDetails.jsx";
+import PersonDetails from "./components/PersonDetails.jsx";
+import TvDetails from "./components/TvDetails.jsx";
 
 const App = () => {
   return (
