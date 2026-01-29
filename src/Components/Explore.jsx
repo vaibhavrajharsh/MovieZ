@@ -37,11 +37,11 @@ const Explore = () => {
   }, [query]);
 
   return (
-    <div className="pb-18 lg:pb-0 flex overflow-hidden justify-start w-full">
+    <div className="pb-15 lg:pb-0 flex justify-start w-full ">
       <SideNav />
       <BottomNav />
 
-      <div className="flex-1 flex flex-col overflow-x-auto">
+      <div className="flex-1 flex flex-col overflow-y-auto overflow-x-hidden">
         {/* SEARCH BAR */}
         <div className="w-full p-5 pb-0">
           <div className="searchbar z-50 w-full lg:w-[50%] h-min relative bg-zinc-700 rounded-xl flex items-center">
@@ -79,8 +79,11 @@ const Explore = () => {
           </div>
         ) : (
           <>
-            <Trending />
-            <Popular />
+            <div>
+              <Trending />
+              <Popular />
+            </div>
+            
           </>
         )}
       </div>

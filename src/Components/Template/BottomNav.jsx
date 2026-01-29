@@ -35,12 +35,12 @@ const BottomNav = () => {
         <span className="text-xs">Trending</span>
       </NavLink>
 
-      <NavLink to="/movies" className={navClass}>
+      <NavLink to="/movie" className={navClass}>
         <i className="ri-film-fill text-xl"></i>
         <span className="text-xs">Movies</span>
       </NavLink>
 
-      <NavLink to="/people" className={navClass}>
+      <NavLink to="/person" className={navClass}>
         <i className="ri-team-fill text-xl"></i>
         <span className="text-xs">People</span>
       </NavLink>

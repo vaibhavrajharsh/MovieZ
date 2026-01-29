@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Card = ({ data, title }) => {
   return (
-    <Link to={`/${data.media_type || title}/details/${data.id}`} className="group relative w-[260px] shrink-0 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      <div className="relative h-[380px] overflow-hidden">
+    <Link to={`/${data.media_type || title}/details/${data.id}`} className="group relative w-[190px] lg:w-[260px] shrink-0 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      <div className="relative h-[300px] lg:h-[380px] overflow-hidden">
         <img
           src={`https://image.tmdb.org/t/p/original/${
             data.poster_path || data.backdrop_path || data.profile_path
@@ -15,18 +15,15 @@ const Card = ({ data, title }) => {
 
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
       </div>
-      <div className="relative p-4">
-        <h1
-          className="truncate text-m font-semibold text-white tracking-wide"
+      <h1
+          className="truncate pl-3 pt-1 text-s lg:text-xl font-medium lg:font-semibold text-white tracking-wide"
           title={
             data.name || data.title || data.original_name || data.original_title
           }
         >
           {data.name || data.title || data.original_name || data.original_title}
         </h1>
-
-        {/* META (optional) */}
-        <div className="mt-1 flex items-center gap-2 text-xs text-zinc-400">
+        <div className="mt-1 pl-4 flex items-center gap-1 lg:gap-2 text-xs text-zinc-400">
           <span className="text-yellow-400">
             ⭐ {data.vote_average?.toFixed(1)}
           </span>
@@ -35,8 +32,8 @@ const Card = ({ data, title }) => {
             {data.media_type || title}
           </span>
         </div>
-
-        <div className="mt-3 flex gap-2 lg:opacity-0 lg:translate-y-2 lg:transition-all lg:duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+       
+        <div className="relative p-2  lg:p-4  lg:mt-3 flex items-center gap-2 lg:opacity-0 lg:translate-y-2 lg:transition-all lg:duration-300 group-hover:opacity-100 group-hover:translate-y-0">
           <button
             onClick={() =>
               window.open(
@@ -46,16 +43,16 @@ const Card = ({ data, title }) => {
                 "_blank",
               )
             }
-            className="flex-1 rounded-lg bg-orange-500 py-2 text-xs font-semibold text-white transition hover:bg-orange-400"
+            className="flex-1 rounded-lg bg-orange-500 py-2 text-xs font-medium lg:font-semibold text-white transition hover:bg-orange-400"
           >
             Watch Now
           </button>
 
-          <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 text-white transition hover:bg-white/10">
+          <button className="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white transition hover:bg-white/10">
             +
           </button>
         </div>
-      </div>
+    
     </Link>
   );
 };

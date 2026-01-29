@@ -55,7 +55,7 @@ const MovieDetails = () => {
         <>
           {/* HERO SECTION */}
           <div
-            className=" min-h-screen w-full bg-cover bg-center relative overflow-x-auto"
+            className=" min-h-screen w-full bg-cover bg-center relative overflow-x-auto pb-12"
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/original/${details.backdrop_path})`,
             }}
@@ -153,7 +153,7 @@ const MovieDetails = () => {
 
               {/* TRAILER */}
               {trailer && (
-                <div className="mt-12">
+                <div className="mt-12 mb-12">
                   <h2 className="text-2xl font-semibold mb-4">Trailer</h2>
                   <iframe
                     className="w-full md:w-[80%] aspect-video rounded-lg"

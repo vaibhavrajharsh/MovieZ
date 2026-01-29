@@ -20,11 +20,11 @@ const SearchBar = () => {
   }, [query]);
   return (
     <div className="searchbar z-50 w-full lg:w-[50%] h-min relative bg-zinc-700 rounded-xl flex items-center">
-      <i className="text-3xl text-zinc-400 ri-search-2-line pl-5"></i>
+      <i className="text-xl lg:text-3xl text-zinc-400 ri-search-2-line pl-5"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
-        className="outline-none border-none text-white placeholder-zinc-400 w-[80%] p-4 bg-zinc-700"
+        className="outline-none border-none text-white placeholder-zinc-400 w-[80%] p-2 lg:p-4 bg-zinc-700"
         type="text"
         placeholder="Movies, Shows and more"
       />

@@ -7,7 +7,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import BottomNav from "./Template/BottomNav";
 import Card from "./Template/Card";
 
-
 const Trendings = () => {
   document.title = "Moviez | Trendings";
   const [movies, setMovies] = useState([]);
@@ -61,37 +60,48 @@ const Trendings = () => {
   return (
     <>
       <SideNav />
-      <BottomNav/>
+      <BottomNav />
       {movies ? (
         <>
           <div
             id="scrollableDiv"
             className="flex flex-col w-full h-full overflow-x-auto"
           >
-            <div className="p-2 mb-3 w-full ">
-              <h1 className="text-4xl text-white font-bold px-5 pt-6">
-                Trending Now
-              </h1>
-              <div className="flex justify-between items-center mr-5">
-                <p className="text-xl text-zinc-500 font-semibold px-5 pt-2">
-                  Top picks people are watching
-                </p>
-                <div className="flex gap-3">
-                  <Dropdown
-                    options={option}
-                    value={duration}
-                    onChange={setDuration}
-                    placeholder="Duration"
-                  />
-                  <Dropdown
-                    options={options}
-                    value={category}
-                    onChange={setCategory}
-                    placeholder="Category"
-                  />
-                </div>
-              </div>
+                    <div className="p-4 sm:p-6">
+          <h1 className="
+            text-xl sm:text-2xl md:text-3xl xl:text-4xl
+            font-semibold lg:font-bold
+            text-white
+          ">
+            Trending Now
+          </h1>
+
+          <div className="
+            mt-2
+            flex flex-col gap-3
+            lg:flex-row lg:items-center lg:justify-between
+          ">
+            <p className="text-sm sm:text-base text-zinc-400 font-medium">
+              Top picks people are watching
+            </p>
+
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              <Dropdown
+                options={option}
+                value={duration}
+                onChange={setDuration}
+                placeholder="Duration"
+              />
+              <Dropdown
+                options={options}
+                value={category}
+                onChange={setCategory}
+                placeholder="Category"
+              />
             </div>
+          </div>
+        </div>
+
             <InfiniteScroll
               dataLength={movies.length}
               next={getMovies}
@@ -99,7 +109,7 @@ const Trendings = () => {
               hasMore={hasMore}
               scrollableTarget="scrollableDiv"
             >
-              <div className="px-5 flex flex-wrap gap-5">
+              <div className="justify-center flex flex-wrap gap-5">
                 {movies.map((e, i) => (
                   <Card key={i} data={e} title={e.media_type} />
                 ))}

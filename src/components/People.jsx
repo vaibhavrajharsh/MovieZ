@@ -61,7 +61,8 @@ const People = () => {
             className="flex flex-col w-full h-full overflow-x-auto"
           >
             <div className="p-2 mb-3 w-full ">
-              <h1 className="text-4xl text-white font-bold px-5 pt-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl xl:text-4xl
+            font-semibold lg:font-bold text-white px-5 pt-6">
                 Trending People
               </h1>
               <div className="flex justify-between items-center mr-5">
@@ -85,7 +86,7 @@ const People = () => {
               hasMore={hasMore}
               scrollableTarget="scrollableDiv"
             >
-              <div className="px-5 flex flex-wrap gap-5">
+              <div className="justify-center flex flex-wrap gap-5">
                 {people.map((e, i) => (
                   <Card key={i} data={e} title={'person'}/>
                 ))}

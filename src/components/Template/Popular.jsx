@@ -24,7 +24,10 @@ const Popular = () => {
   return movies ? (
     <>
       <div>
-        <h1 className="text-4xl text-white font-bold px-5 pt-6">
+        <h1 className="text-l
+    sm:text-xl font-semibold
+    md:text-3xl
+    xl:text-4xl text-white lg:font-bold px-5 pt-6">
           Popular Tv Series
         </h1>
         <div className="flex justify-between items-center mr-5">

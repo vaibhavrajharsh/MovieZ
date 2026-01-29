@@ -29,11 +29,11 @@ const Home = () => {
 
   return (
     <>
-      <div className=" pb-18 lg:pb-0 flex overflow-hidden justify-center w-full">
+      <div className=" pb-15 lg:pb-0 flex overflow-hidden justify-center w-full">
         <SideNav />
         <BottomNav />
         <div className="w-full lg:w-[85vw] p-2 lg:p-0 flex flex-col">
-          <div className="shrink-0 p-5">
+          <div className="shrink-0 p-3 pt-1 lg:p-5">
             <SearchBar/>
           </div>
 
