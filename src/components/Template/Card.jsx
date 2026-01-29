@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Card = ({ data, title }) => {
   return (
-    <Link to={`/${data.media_type || title}/details/${data.id}`} className="group relative w-[190px] lg:w-[260px] shrink-0 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      <div className="relative h-[300px] lg:h-[380px] overflow-hidden">
+    <Link to={`/${data.media_type || title}/details/${data.id}`} className="group relative w-47.5 lg:w-65 shrink-0 rounded-2xl overflow-hidden bg-zinc-900 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      <div className="relative h-75 lg:h-95 overflow-hidden">
         <img
           src={`https://image.tmdb.org/t/p/original/${
             data.poster_path || data.backdrop_path || data.profile_path
